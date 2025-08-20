@@ -1,0 +1,15 @@
+{% extends 'ecommerce/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Welcome to the E-commerce Store!</h1>
+            <p class="col-md-8 fs-4">Browse our collection of high-quality products.</p>
+            <a class="btn btn-primary btn-lg" href="{% url 'product-list-html' %}" role="button">
+                View All Products
+            </a>
+        </div>
+    </div>
+{% endblock %}

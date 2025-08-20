@@ -1,0 +1,28 @@
+{% extends 'ecommerce/base.html' %}
+
+{% block title %}Products{% endblock %}
+
+{% block content %}
+    <h2>Product List</h2>
+    <div class="row">
+        {% if products %}
+            {% for product in products %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="{% url 'product-detail-html' product.id %}" class="text-decoration-none">
+                                    {{ product.name }}
+                                </a>
+                            </h5>
+                            <p class="card-text"><strong>Price:</strong> ${{ product.price }}</p>
+                            <p class="card-text"><small class="text-muted">Category: {{ product.category.name }}</small></p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No products available.</p>
+        {% endif %}
+    </div>
+{% endblock %}
